@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation Practice</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="main-title">Original Title</h1>
+
+    <div class="text-section">Text Section 1</div>
+    <div class="text-section">Text Section 2</div>
+
+    <div id="content-container">
+      <p>Existing Paragraph</p>
+    </div>
+
+    <button id="alert-button">Click Me</button>
+
+    <section id="highlighted-section">This section can be highlighted.</section>
+
+    <div class="query-selected">
+      This content will be updated via querySelector.
+    </div>
+
+    <img
+      id="dynamic-image"
+      src="https://via.placeholder.com/100"
+      alt="Sample Image"
+    />
+
+    <script src="dom_manipulation.js"></script>
+
+    <script>
+      // Trigger specific functions when the window is loaded
+      window.onload = function () {
+        updateTitle();
+        updateTextColor();
+        addButtonClickEvent();
+        updateUsingQuerySelector();
+        changeImageSource();
+      };
+    </script>
+  </body>
+</html>
