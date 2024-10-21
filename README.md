@@ -11,5 +11,7 @@
 
 - **MERN Stack Front to Back Full Stack React, Redux, & Node.js from Udemy**
   - Coding, Lectures & Notes
+- **Web Development with Python: Django & FastAPI integration**
+  - Coding, Lectures & Notes
 
 ## NOTE: don't forget to add mongoURI, jwtSecret, githubCLientId, and githubSecret inside server/config/default.json
