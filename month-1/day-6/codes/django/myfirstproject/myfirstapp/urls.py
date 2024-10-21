@@ -9,4 +9,6 @@ urlpatterns = [
     path('myfirstpage/', views.myfirstpage, name='myfirstpage'), # call myfirstpage from views module
     path('mysecondpage/', views.mysecondpage, name='mysecondpage'), # call mysecondpage from views module
     path('mythirdpage/', views.mythirdpage, name='mythirdpage'), # call mythirdpage from views module
+    path('myimagepage/', views.myimagepage, name='myimagepage'), # call myimagepage from views module
+    path('myformpage/', views.myformpage, name='myformpage'), # call myform from views module
 ]   
