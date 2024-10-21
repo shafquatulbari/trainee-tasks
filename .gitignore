@@ -56,3 +56,6 @@ build/
 # Temporary files
 *.tmp
 *.swp
+
+#default.json
+default.json
