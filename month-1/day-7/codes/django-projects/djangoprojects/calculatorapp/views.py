@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'calculatorapp/index.html')
 
 def submitquery(request):
     q = request.GET['query']
@@ -14,13 +14,13 @@ def submitquery(request):
             "answer": answer,
             "error": False
         }
-        return render(request, 'index.html', context=mydictionary)
+        return render(request, 'calculatorapp/index.html', context=mydictionary)
     except: 
         mydictionary = {
             "error": True,
             "query": q,
             "answer": "Invalid Query"
         }
-        return render(request, 'index.html', context=mydictionary)
+        return render(request, 'calculatorapp/index.html', context=mydictionary)
 
 
