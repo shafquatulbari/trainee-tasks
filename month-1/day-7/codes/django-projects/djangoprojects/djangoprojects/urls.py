@@ -1,5 +1,5 @@
 """
-URL configuration for myfirstproject project.
+URL configuration for djangoprojects project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -18,9 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('', include('rootapp.urls')),
     path('admin/', admin.site.urls),
-    path('', include('myfirstapp.urls')),
-    
+    path('calculatorapp/', include('calculatorapp.urls')),
 ]
-
-handler404 = 'myfirstapp.views.error_404_view'

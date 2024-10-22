@@ -4,6 +4,9 @@ from .forms import * # import FeedBackForm from forms module
 import re
 
 # Create your views here.
+def error_404_view(request, exception):
+    return render(request, '404.html')
+
 def myfunctioncall(request):
     return HttpResponse("Hello, World!")
 
