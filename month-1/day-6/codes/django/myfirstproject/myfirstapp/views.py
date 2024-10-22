@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+from .forms import * # import FeedBackForm from forms module
+import re
 
 # Create your views here.
 def myfunctioncall(request):
@@ -46,3 +48,38 @@ def myimagepage(request):
 
 def myformpage(request):
     return render(request, 'myformpage.html')
+
+def myform2(request):
+    if request.method == 'POST':
+        form = FeedBackForm(request.POST)
+        if form.is_valid():
+            title = request.POST['title']
+            subject = request.POST['subject']
+            email = request.POST['email']
+            mydictionary = {
+                "form": FeedBackForm()
+            }
+            errorflag = False
+            Errors = []
+            if title != title.upper(): 
+                errorflag = True
+                errormsg = "Title should be in uppercase"
+                Errors.append(errormsg)
+            regex = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" # regular expression for email
+            if not re.search(regex,email):
+                errorflag = True
+                errormsg = "Email is not valid"
+                Errors.append(errormsg)
+            if errorflag != True:
+                mydictionary["success"] = True
+                mydictionary["successmsg"] = "Form submitted"
+            mydictionary["error"] = errorflag
+            mydictionary["errors"] = Errors
+            return render(request, 'myform2.html', context=mydictionary)
+    elif request.method == 'GET':
+        form = FeedBackForm() #FeedBackForm(None)
+        mydictionary = {
+            "form": form
+        }
+        return render(request, 'myform2.html', context=mydictionary)
+    
