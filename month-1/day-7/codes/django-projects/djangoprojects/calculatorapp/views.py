@@ -5,3 +5,22 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'index.html')
 
+def submitquery(request):
+    q = request.GET['query']
+    try:
+        answer = eval(q) # eval() function evaluates the “String” like a python expression and returns the result as an integer.
+        mydictionary = {
+            "query": q,
+            "answer": answer,
+            "error": False
+        }
+        return render(request, 'index.html', context=mydictionary)
+    except: 
+        mydictionary = {
+            "error": True,
+            "query": q,
+            "answer": "Invalid Query"
+        }
+        return render(request, 'index.html', context=mydictionary)
+
+
