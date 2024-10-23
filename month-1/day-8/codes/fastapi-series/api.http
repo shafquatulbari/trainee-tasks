@@ -1,0 +1,22 @@
+POST http://localhost:8000/bands/
+Content-Type: application/json
+
+{
+    "name": "Boards of Canada",
+    "genre": "Electronic",
+    "albums": [
+        {
+            "title": "Music Has the Right to Children",
+            //In the format of YYYY-MM-DD
+            "release_date": "1998-04-20"
+        },
+        {
+            "title": "Geogaddi",
+            "release_date":  "2002-02-18"
+        }
+    ]
+}
+
+###
+GET http://localhost:8000/bands
+
