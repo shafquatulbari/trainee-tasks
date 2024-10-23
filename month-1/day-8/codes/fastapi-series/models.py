@@ -33,7 +33,7 @@ class BandCreate(BandBase):
     albums: list[AlbumBase] | None = None # List of albums
     @validator('genre', pre=True)
     def title_case_genre(cls, value):
-        return value.title() # RoCK -> Rock
+        return value.title() # RoCK -> Rock #validator ensures that the genre string is in title case
 
 class Band(BandBase, table=True):
     id: int = Field(default=None, primary_key=True)
