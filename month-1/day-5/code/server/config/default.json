@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://shafquat:shafquat11@cluster0.mdmlw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-  "jwtSecret": "mysecrettoken"
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "Ov23li0AFT57cwkNVumH",
+  "githubSecret": "a5e8bfec5777b4ea1d4cbf58243f583438a8932c"
 }
