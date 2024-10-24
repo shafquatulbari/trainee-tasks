@@ -1,1 +1,8 @@
-Hello World!
+{% extends 'base.html' %} {% block content %}
+<h1>Members Database</h1>
+{% for member in all %}
+<p>
+  {{ member.fname }} {{ member.lname }} is {{member.age}} years old and their
+  contact info is {{member.email}}
+</p>
+{% endfor %} {% endblock %}
