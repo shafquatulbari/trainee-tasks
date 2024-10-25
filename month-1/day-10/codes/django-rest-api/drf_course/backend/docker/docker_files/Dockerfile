@@ -4,9 +4,9 @@ ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
 RUN set -e; \
-    apt-get update ;\
-    apt-get -y install netcat ;\
-    apt-get -y install gettext ;
+    apt-get update; \
+    apt-get -y install netcat-openbsd; \
+    apt-get -y install gettext;
 
 RUN mkdir /code
 COPY . /code/
