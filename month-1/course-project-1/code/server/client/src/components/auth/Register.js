@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
-import axios from "axios";
+import { Link } from "react-router-dom";
+//import axios from "axios";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -18,28 +19,31 @@ const Register = () => {
     if (password !== password2) {
       console.log("Passwords do not match");
     } else {
-      const newUser = {
-        name,
-        email,
-        password,
-      };
-      try {
-        const config = {
-          headers: {
-            "Content-Type": "application/json", //this is to tell the server that we are sending json data
-          },
-          withCredentials: true,
-        };
-        const body = JSON.stringify(newUser); // this is the data that we are sending
-        const res = await axios.post(
-          "http://localhost:3001/api/users",
-          body,
-          config
-        );
-        console.log(res.data);
-      } catch (err) {
-        console.error(err.response.data);
-      }
+      console.log("SUCCESS");
+      // } else {
+      //   const newUser = {
+      //     name,
+      //     email,
+      //     password,
+      //   };
+      //   try {
+      //     const config = {
+      //       headers: {
+      //         "Content-Type": "application/json", //this is to tell the server that we are sending json data
+      //       },
+      //       withCredentials: true,
+      //     };
+      //     const body = JSON.stringify(newUser); // this is the data that we are sending
+      //     const res = await axios.post(
+      //       "http://localhost:3001/api/users",
+      //       body,
+      //       config
+      //     );
+      //     console.log(res.data);
+      //   } catch (err) {
+      //     console.error(err.response.data);
+      //   }
+      // }
     }
   };
   return (
@@ -95,7 +99,7 @@ const Register = () => {
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
       <p className="my-1">
-        Already have an account? <a href="login.html">Sign In</a>
+        Already have an account? <Link to="/login">Sign In</Link>
       </p>
     </Fragment>
   );
