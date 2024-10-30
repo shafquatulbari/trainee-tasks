@@ -28,9 +28,14 @@ const Register = () => {
           headers: {
             "Content-Type": "application/json", //this is to tell the server that we are sending json data
           },
+          withCredentials: true,
         };
         const body = JSON.stringify(newUser); // this is the data that we are sending
-        const res = await axios.post("/api/users", body, config);
+        const res = await axios.post(
+          "http://localhost:3001/api/users",
+          body,
+          config
+        );
         console.log(res.data);
       } catch (err) {
         console.error(err.response.data);
