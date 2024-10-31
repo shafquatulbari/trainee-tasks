@@ -8,3 +8,4 @@ export const setAlert = (msg, alertType) => (dispatch) => {
     payload: { msg, alertType, id },
   });
 };
+

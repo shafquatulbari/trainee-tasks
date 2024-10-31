@@ -23,6 +23,9 @@
   - https://github.com/shafquatulbari/django-inventory-management-system
 
 - **FASTAPI Video Youtube Day 12, 13**
+
   - https://www.youtube.com/watch?v=7t2alSnE2-I
+
+- **Responsibility shifted to working on core JS starting day 14**
 
 ## NOTE: don't forget to add mongoURI, jwtSecret, githubCLientId, and githubSecret inside server/config/default.json
