@@ -1,8 +1,11 @@
 import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { login } from "../../actions/auth";
 //import axios from "axios";
 
-const Login = () => {
+const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,32 +19,14 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value }); //setting the form data
   const onSubmit = async (e) => {
     e.preventDefault(); //preventing the default action
-    console.log("SUCCESS");
-    // } else {
-    //   const newUser = {
-    //     name,
-    //     email,
-    //     password,
-    //   };
-    //   try {
-    //     const config = {
-    //       headers: {
-    //         "Content-Type": "application/json", //this is to tell the server that we are sending json data
-    //       },
-    //       withCredentials: true,
-    //     };
-    //     const body = JSON.stringify(newUser); // this is the data that we are sending
-    //     const res = await axios.post(
-    //       "http://localhost:3001/api/users",
-    //       body,
-    //       config
-    //     );
-    //     console.log(res.data);
-    //   } catch (err) {
-    //     console.error(err.response.data);
-    //   }
-    // }
+    login(email, password);
   };
+
+  //Redirect if logged in
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" />;
+  }
+
   return (
     <Fragment>
       <h1 className="large text-primary">Sign In</h1>
@@ -72,10 +57,19 @@ const Login = () => {
         <input type="submit" className="btn btn-primary" value="Login" />
       </form>
       <p className="my-1">
-        Don't have an account? <Link to="/register">Sign Up</Link> 
+        Don't have an account? <Link to="/register">Sign Up</Link>
       </p>
     </Fragment>
   );
 };
 
-export default Login;
+login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { login })(Login);
