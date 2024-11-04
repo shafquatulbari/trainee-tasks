@@ -29,5 +29,6 @@
 - **Responsibility shifted to working on core JS starting day 14**
 
 - **Work on the same Inventory System Project but this time with Node.js (Day 15)**
+  - https://github.com/shafquatulbari/node-inventory-management-system
 
 ## NOTE: don't forget to add mongoURI, jwtSecret, githubCLientId, and githubSecret inside server/config/default.json
