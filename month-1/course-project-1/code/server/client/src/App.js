@@ -16,6 +16,8 @@ import AddExperience from "./components/profile-forms/AddExperience";
 import AddEducation from "./components/profile-forms/AddEducation";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
+import Posts from "./components/posts/Posts";
+import Post from "./components/post/Post";
 
 // Redux
 import { Provider } from "react-redux";
@@ -124,6 +126,24 @@ const App = () => {
               element={
                 <section className="container">
                   <AddEducation />
+                </section>
+              }
+            />
+            <PrivateRoute
+              exact
+              path="/posts"
+              element={
+                <section className="container">
+                  <Posts />
+                </section>
+              }
+            />
+            <PrivateRoute
+              exact
+              path="/posts/:id"
+              element={
+                <section className="container">
+                  <Post />
                 </section>
               }
             />

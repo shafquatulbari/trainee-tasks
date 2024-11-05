@@ -1,6 +1,6 @@
 # trainee-tasks
 
-## Month 1 - Courses for MERN
+## Month 1 - Courses for MERN, Django & FastAPI
 
 ### Day 1 - Day 4
 
