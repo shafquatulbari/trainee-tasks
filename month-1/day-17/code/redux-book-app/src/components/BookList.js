@@ -10,10 +10,10 @@ const BookList = ({ books, selectBook }) => (
       <div
         key={book.id}
         onClick={() => selectBook(book)}
-        className="p-4 border rounded-lg shadow hover:shadow-lg transition cursor-pointer"
+        className="p-4 border border-gray-700 rounded-lg shadow hover:shadow-lg transition cursor-pointer bg-gray-800 hover:bg-gray-700 text-white"
       >
         <h3 className="text-lg font-semibold">{book.volumeInfo.title}</h3>
-        <p className="text-gray-600">{book.volumeInfo.authors?.join(", ")}</p>
+        <p className="text-gray-400">{book.volumeInfo.authors?.join(", ")}</p>
         <img
           src={book.volumeInfo.imageLinks?.thumbnail}
           alt={book.volumeInfo.title}
