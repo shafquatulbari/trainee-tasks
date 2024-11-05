@@ -46,7 +46,7 @@ const EditProfile = ({
       youtube: loading || !profile.social ? "" : profile.social.youtube,
       instagram: loading || !profile.social ? "" : profile.social.instagram,
     });
-  }, [loading]); // when it loads it will run this useEffect
+  }, [loading, getCurrentProfile]); // when it loads it will run this useEffect
 
   const {
     company,
