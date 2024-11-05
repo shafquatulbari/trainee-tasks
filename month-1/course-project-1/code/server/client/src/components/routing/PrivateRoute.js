@@ -1,29 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Route, Navigate } from "react-router-dom";
-import auth from "../../reducers/auth";
+import { Navigate, Outlet } from "react-router-dom";
 
-const PrivateRoute = ({
-  component: Component,
-  auth: { isAuthenticated, loading },
-  ...rest
-}) => (
-  <Route
-    {...rest}
-    render={(props) =>
-      !isAuthenticated && !loading ? (
-        <Navigate to="/login" />
-      ) : (
-        <Component {...props} />
-      )
-    }
-  />
-);
+const PrivateRoute = ({ auth: { isAuthenticated, loading } }) => {
+  if (!isAuthenticated && !loading) {
+    // Redirect to login if not authenticated
+    return <Navigate to="/login" />;
+  }
 
-PrivateRoute.propTypes = {};
+  // Render child components if authenticated
+  return <Outlet />;
+};
 
-PrivateRoute.defaultProps = {
+PrivateRoute.propTypes = {
   auth: PropTypes.object.isRequired,
 };
 

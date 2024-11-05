@@ -30,7 +30,7 @@ if (localStorage.token) {
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
-  }, []); // Your useEffect function should have an empty dependency array, so it only runs once when the component mounts.
+  }, []);
 
   return (
     <Provider store={store}>
@@ -38,9 +38,8 @@ const App = () => {
         <Fragment>
           <Navbar />
           <Routes>
-            <Route exact path="/" element={<Landing />} />
+            <Route path="/" element={<Landing />} />
             <Route
-              exact
               path="/alert"
               element={
                 <section className="container">
@@ -49,7 +48,6 @@ const App = () => {
               }
             />
             <Route
-              exact
               path="/register"
               element={
                 <section className="container">
@@ -58,7 +56,6 @@ const App = () => {
               }
             />
             <Route
-              exact
               path="/login"
               element={
                 <section className="container">
@@ -67,7 +64,6 @@ const App = () => {
               }
             />
             <Route
-              exact
               path="/profiles"
               element={
                 <section className="container">
@@ -76,7 +72,6 @@ const App = () => {
               }
             />
             <Route
-              exact
               path="/profile/:id"
               element={
                 <section className="container">
@@ -84,73 +79,70 @@ const App = () => {
                 </section>
               }
             />
-            <PrivateRoute
-              exact
-              path="/dashboard"
-              element={
-                <section className="container">
-                  <Dashboard />
-                </section>
-              }
-            />
-            <PrivateRoute
-              exact
-              path="/create-profile"
-              element={
-                <section className="container">
-                  <CreateProfile />
-                </section>
-              }
-            />
-            <PrivateRoute
-              exact
-              path="/edit-profile"
-              element={
-                <section className="container">
-                  <EditProfile />
-                </section>
-              }
-            />
-            <PrivateRoute
-              exact
-              path="/add-experience"
-              element={
-                <section className="container">
-                  <AddExperience />
-                </section>
-              }
-            />
-            <PrivateRoute
-              exact
-              path="/add-education"
-              element={
-                <section className="container">
-                  <AddEducation />
-                </section>
-              }
-            />
-            <PrivateRoute
-              exact
-              path="/posts"
-              element={
-                <section className="container">
-                  <Posts />
-                </section>
-              }
-            />
-            <PrivateRoute
-              exact
-              path="/posts/:id"
-              element={
-                <section className="container">
-                  <Post />
-                </section>
-              }
-            />
+            {/* Private routes */}
+            <Route element={<PrivateRoute />}>
+              <Route
+                path="/dashboard"
+                element={
+                  <section className="container">
+                    <Dashboard />
+                  </section>
+                }
+              />
+              <Route
+                path="/create-profile"
+                element={
+                  <section className="container">
+                    <CreateProfile />
+                  </section>
+                }
+              />
+              <Route
+                path="/edit-profile"
+                element={
+                  <section className="container">
+                    <EditProfile />
+                  </section>
+                }
+              />
+              <Route
+                path="/add-experience"
+                element={
+                  <section className="container">
+                    <AddExperience />
+                  </section>
+                }
+              />
+              <Route
+                path="/add-education"
+                element={
+                  <section className="container">
+                    <AddEducation />
+                  </section>
+                }
+              />
+              <Route
+                path="/posts"
+                element={
+                  <section className="container">
+                    <Posts />
+                  </section>
+                }
+              />
+              <Route
+                path="/posts/:id"
+                element={
+                  <section className="container">
+                    <Post />
+                  </section>
+                }
+              />
+            </Route>
           </Routes>
         </Fragment>
       </Router>
     </Provider>
   );
 };
+
 export default App;
