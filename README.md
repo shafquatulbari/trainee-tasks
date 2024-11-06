@@ -32,10 +32,17 @@
 
   - https://github.com/shafquatulbari/node-inventory-management-system
 
+### Day 16 - Day 20
+
 - **Wrap up the MERN course**
+
   - finished the course project
   - confident with Node.js and React.js
   - built small scale redux and react applications (Day 16, Day 17)
   - Watched a crash course on youtube (https://www.youtube.com/watch?v=qhll3DXuLHI)
+
+- **Learn about Selenium, Postman, Script Automation with JS**
+  - For Selenium (https://www.youtube.com/watch?v=BQ-9e13kJ58&list=PLZMWkkQEwOPl0udc9Dap2NbEAkwkdOTV3)
+  - For postman api automation (https://www.youtube.com/watch?v=42iyCQnnhIE)
 
 ## NOTE: don't forget to add mongoURI, jwtSecret, githubCLientId, and githubSecret inside server/config/default.json
