@@ -45,4 +45,6 @@
   - For Selenium (https://www.youtube.com/watch?v=BQ-9e13kJ58&list=PLZMWkkQEwOPl0udc9Dap2NbEAkwkdOTV3)
   - For postman api automation (https://www.youtube.com/watch?v=42iyCQnnhIE)
 
-## NOTE: don't forget to add mongoURI, jwtSecret, githubCLientId, and githubSecret inside server/config/default.json
+### NOTE: don't forget to add mongoURI, jwtSecret, githubCLientId, and githubSecret inside server/config/default.json
+
+## Month 2
